@@ -139,6 +139,10 @@ namespace AspNetRoleAuthorization.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            using (ApplicationDbContext _context = new ApplicationDbContext())
+            {
+                ViewBag.Name = new SelectList(_context.Roles.ToList(), "Name", "Name");
+            }
             return View();
         }
 
@@ -156,13 +160,13 @@ namespace AspNetRoleAuthorization.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
