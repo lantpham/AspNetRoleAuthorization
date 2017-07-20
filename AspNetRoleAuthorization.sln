@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetRoleAuthorization", "AspNetRoleAuthorization\AspNetRoleAuthorization.csproj", "{2FA6F109-08F6-49F1-95C2-8FAB87FF27EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetRoleAuthorization.Tests", "AspNetRoleAuthorization.Tests\AspNetRoleAuthorization.Tests.csproj", "{FA9816D8-7BB5-43F6-A0B1-7A7EF81B4CFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FA6F109-08F6-49F1-95C2-8FAB87FF27EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA6F109-08F6-49F1-95C2-8FAB87FF27EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA6F109-08F6-49F1-95C2-8FAB87FF27EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA6F109-08F6-49F1-95C2-8FAB87FF27EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9816D8-7BB5-43F6-A0B1-7A7EF81B4CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9816D8-7BB5-43F6-A0B1-7A7EF81B4CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9816D8-7BB5-43F6-A0B1-7A7EF81B4CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9816D8-7BB5-43F6-A0B1-7A7EF81B4CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
