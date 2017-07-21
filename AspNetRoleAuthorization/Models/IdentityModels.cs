@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace AspNetRoleAuthorization.Models
 {
@@ -29,5 +30,15 @@ namespace AspNetRoleAuthorization.Models
         {
             return new ApplicationDbContext();
         }
+    }
+    public class ListItemView
+    {
+        public List<ListItem> items { get; set; }
+       
+    }
+    public class ListItem
+    {
+        public int Id { get; set; }
+        public string Text { get; set; }
     }
 }

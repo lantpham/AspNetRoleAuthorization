@@ -12,9 +12,13 @@
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
-						
+						@{   
+    ViewBag.Title = "Index";   
+} 
+					   <h1>Welcome Admin to:@Html.ActionLink("Manage Role", "AddRole", "Home")</h1>     
+
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+      
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>

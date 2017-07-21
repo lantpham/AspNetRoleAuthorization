@@ -1,0 +1,50 @@
+﻿@using AspNetRoleAuthorization.Models;
+@model ListItemView
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+
+@using (Html.BeginForm())
+{
+@*	foreach (var item in Model.items)
+	{
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-10">
+							@Html.TextBoxFor(m => item.Id, new { @class = "form-control" })
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-10">
+						@Html.TextBoxFor(m => item.Text, new { @class = "form-control" })
+					</div>
+				</div>
+	}*@
+for (var i = 0; i < Model.items.Count; i++)
+{
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				@Html.TextBoxFor(m => Model.items[i].Id, new { @class = "form-control" })
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				@Html.TextBoxFor(m => Model.items[i].Text, new { @class = "form-control" })
+			</div>
+		</div>
+
+}
+<div class="form-group">
+	<div class="col-md-offset-2 col-md-10">
+
+	</div>
+</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" class="btn btn-default" value="submit" />
+			</div>
+		</div>
+}	

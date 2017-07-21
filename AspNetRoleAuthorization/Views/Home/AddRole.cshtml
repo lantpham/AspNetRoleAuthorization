@@ -1,0 +1,63 @@
+﻿
+@model List<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>   
+@{
+		ViewBag.Title = "AddRole";
+		Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>only Admin can Add Role</h2>
+
+ @*In view we bind all the user roles inside html table.*@ 
+
+
+@using (Html.BeginForm())
+{
+		@Html.AntiForgeryToken()
+		<h4>Enter your email.</h4>
+		<hr />
+		@Html.ValidationSummary("", new { @class = "text-danger" })
+
+		<table style=" background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding: 5px;width: 99%;table-layout:fixed;" cellpadding="6" cellspacing="6">
+			<tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+				<td align="center" colspan="2">
+					<h2> Create User Roles</h2>
+				</td>
+
+			</tr>
+			<tr>
+				<td>
+					<table id="tbrole" style="width:100%; border:dotted 1px; background-color:gainsboro; padding-left:10px;">
+						@foreach (var item in Model)
+						{
+								<tr>
+									<td>
+														@Html.TextBoxFor(m=>item.Id, new { @class = "form-control" })
+											</td>
+									<td>
+														@Html.TextBoxFor(m=>item.Name, new { @class = "form-control" })
+											</td>
+									@*@if(item.Name == null)
+									{
+
+									}
+									else
+									{
+											<td style="width:100%; border:dotted 1px;">
+												@item.Name
+											</td>
+									}*@
+
+							</tr>
+						}
+					</table>
+				</td>
+				<td align="right" style="color:#FFFFFF;padding-right:10;"></td>
+			</tr>
+		</table>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" class="btn btn-default" value="Email Link" />
+			</div>
+		</div>
+}
+
